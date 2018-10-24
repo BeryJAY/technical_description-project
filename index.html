@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+<title>home page</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+<nav id="navbar">
+<header>Design Specification Documentation</header>
+<ul>
+        <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
+		<a class="nav-link" href="#Functions of the system" rel="internal"><li>Functions of the system</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+</ul>
+</nav>
+
+<main id="main-doc">
+
+<section class="main-section" id="introduction">
+<header>Introduction</header>
+<article>
+<p>This documentation describes the architecture, system design and the implementation of Biometric based car to 
+driver matching security system for urban plots which is designed to enhance car security.The system matches the finger print details to the car number plate so that notification is sent in cases of theft.</p>
+<p>This system has a mobile application and a desktop application. 
+The mobile application is used by the people who want to use the parking areas to park their cars and these are the drivers of the cars. 
+The desktop application is used by the employees of the parking area to monitor the activities of the parking area.
+
+<p>The system enables user to see available parking. The parking operator can track the parking usage and billing and handle the cases of a mismatch. The system administrator checks that all functions are working properly and deals with maintenance of the system. 
+The activities that a user can perform while using this system include:
+<li>Logging in</li> 
+<li>Registration</li>
+<li>Updating user details</li> 
+<li>Viewing available parking areas</li> 
+</p>
+
+</article>
+</section>
+
+<section class="main-section" id="Functions of the system">
+<header>Functions of the system</header>
+<article>
+<p>These are the functions of the system;</p>
+<ol>
+<li>The system shall be able to capture the biometric information of the car driver and the car number plate.</li>
+<li>The system shall be able to match the car’s number plate to its driver’s fingerprint.</li>
+<li>The system shall be able to display available parking areas.</li> 
+<li>Notify the driver who brought in the car at entry about incase another person is taking the car out of the parking.</li>
+</ol>
+<p>Any person with a smart phone who regularly uses parking areas with the system deployed, 
+as well as the parking operators stationed at the parking areas can use this application.</p> 
+</article></section>
+
+<section class="main-section" id="Architectural design">
+<header>Architectural Design</header>
+<article>
+<p>The system follows a client-server architectural style that is divided into three parts, namely; 
+<ol><li>Client in form of the mobile application that captures the user actions and a desktop application that is installed in the parking area.</li>
+<li>Server in form of the Parking Management Server </li>
+<li>Database layer, that consists of data repositories.</li> </ol></p>
+
+<p>The main components of the system that collaborate to achieve the desired functionality include; 
+<ul><li>Client:</li>This is the main user interface in form of mobile application that shows the number of available parking slots.
+This happens as one is viewing the details of a parking area. Also displays the parking bill they are supposed to pay for a given interval.
+it also shows the other parking benefits of using the parking area.
+<li>Parking operator:</li>The person who is able to identify car thefts when the system detects mismatch of car 
+and driver at exit point from the ones that were at car entry, keep watch of those who have not fulfilled payments. 
+<li>Application logic (Parking Management Server):</li> It consists of several modules that are in charge of different responsibilities and these include; 
+<ul><li>Registration module: It is responsible for registering the drivers and parking operators as well as authorizing access to the mobile application through use of login credentials.
+<li>Matching module: It is responsible for matching the car to the driver’s thumbprint both on entry to and exit from the parking area.</li>
+<li>Tallying module: This is the module that tallies the fingerprint of the driver and the number plate of the car.</li>
+<li>Analysis module: This is the module that is responsible for the generation of the weekly reports to the manager.</li></ul></ul></p>
+</article></section>
+
+
+</main>
+
+</body>
+</html>
