@@ -11,14 +11,15 @@
         <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
 		<a class="nav-link" href="#Functions of the system" rel="internal"><li>Functions of the system</li></a>
 		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Decomposition" rel="internal"><li>Decomposition</li></a>
+		<a class="nav-link" href="#Design Rationale" rel="internal"><li>Design Rationale</li></a>
+		<a class="nav-link" href="#Data design" rel="internal"><li>Data design</li></a>
+		<a class="nav-link" href="#Component design " rel="internal"><li>Component design </li></a>
+		<a class="nav-link" href="#Human interface design " rel="internal"><li>Human interface design </li></a>
+		<a class="nav-link" href="#Types of system requirements" rel="internal"><li>Types of system requirements</li></a>
+		<a class="nav-link" href="#References" rel="internal"><li>References</li></a>
+
+		
 </ul>
 </nav>
 
@@ -27,13 +28,36 @@
 <section class="main-section" id="introduction">
 <header>Introduction</header>
 <article>
-<p>This documentation describes the architecture, system design and the implementation of Biometric based car to 
-driver matching security system for urban plots which is designed to enhance car security.The system matches the finger print details to the car number plate so that notification is sent in cases of theft.</p>
+
+<li>Purpose</li>
+<p>The purpose of this software design documentation is to describe the architecture,
+system design and the implementation of Biometric based car to driver matching 
+security system for urban plots as described in the requirements document.</p>
+<p> Biometric based car to 
+driver matching security system for urban plots is designed to enhance car security in parking areas.</p>
+<li>Scope</li> 
+ <p>This document describes the architecture, system design and implementation of the driver to car matching security system. 
+ The system matchesthe finger print details to the car number plate so that notification is sent in cases of theft. This will help in enhancing car security.</p>
+<li>Overview</li>  
+<p>In the introduction of the documentation, we describe the purpose of the Biometric based car to driver matching security 
+system for urban plots as described in the system requirements specification. </p>
+<p>The documentation provides the scope of this project explaining its goals, objectives and benefits in brief. The documentation also contains 
+the reference materials which were used. </p>
+<p>In addition, the document contains the system overview which gives the general description of the functionality, context and design of this project. </p>
+<p>The architecture of the system that this project is going to come up with is also explained here. In the Architecture we find modular program
+ structures showing the different relationships of the different modules in the system and how they work together to achieve the complete 
+ functionality of the system.</p>
+<p>There is a decomposition description providing the different subsystems in the architectural design.</p> 
+ <p>The documentation further contains the data design showing the different data modules, component design to look at what each component does in 
+ a more systematic way.</p>
+<p> Lastly interface design describing the functionality of the system from the user’s perspective and also the Requirements 
+ matrix to provide a cross reference that traces components and data structures to the requirements in the SRS document.</p>
+
 <p>This system has a mobile application and a desktop application. 
 The mobile application is used by the people who want to use the parking areas to park their cars and these are the drivers of the cars. 
-The desktop application is used by the employees of the parking area to monitor the activities of the parking area.
+The desktop application is used by the employees of the parking area to monitor the activities of the parking area.</p>
 
-<p>The system enables user to see available parking. The parking operator can track the parking usage and billing and handle the cases of a mismatch. The system administrator checks that all functions are working properly and deals with maintenance of the system. 
+<p>The system enables user to see available parking. 
 The activities that a user can perform while using this system include:
 <li>Logging in</li> 
 <li>Registration</li>
@@ -77,8 +101,35 @@ and driver at exit point from the ones that were at car entry, keep watch of tho
 <li>Matching module: It is responsible for matching the car to the driver’s thumbprint both on entry to and exit from the parking area.</li>
 <li>Tallying module: This is the module that tallies the fingerprint of the driver and the number plate of the car.</li>
 <li>Analysis module: This is the module that is responsible for the generation of the weekly reports to the manager.</li></ul></ul></p>
+<p>Below is the architectural design of the sytem.</p>
+<img src="C:\Users\beryj\OneDrive\Desktop\architecture.png" />
 </article></section>
 
+<section class="main-section" id="Design Rationale">
+<header>Design Rationale</header>
+<article>
+<p>The system is based on the Three Tier client/server architectural style that depicts the 
+client as the mobile application and server stub as the Parking Management server. </p>
+<p>Reasons for choosing a three tier Client/Server architecture
+ 
+<li>Heterogeneity: The 3-tier model can work best in a heterogeneous database environment where all the database servers and the interactions with 
+these servers are of different types because the middleware server can be used for provision of data access connections to heterogeneous data 
+sources as a database gateway.</li> 
+
+<li>High performance: The middleware server provides high speed native access to multiple databases, so performance is improved over database connectivity 
+solutions like Open Database Connectivity. That means one is not embedding SQL (Structured Query Language) programs into client applications and not locking one´s products to specific database vendors. </li>
+
+
+<li>Easily change and maintain each domain without affecting others when the interface, application logic and data service are separated.</li>
+
+<li>Implementing a 3-tier application using a database gateway as a middleware server can cause the application logic and business rules achieve database 
+independence. This means that you can use different data sources without modification of the application logic and business rules.</li></p> 
+<p>Tradeoffs :
+ It increases complexity in building the middleware instead of focusing on the client and server only. </p>
+
+
+
+</article></section>
 
 </main>
 
