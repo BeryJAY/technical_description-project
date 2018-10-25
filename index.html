@@ -9,14 +9,14 @@
 <header>Design Specification Documentation</header>
 <ul>
         <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
-		<a class="nav-link" href="#Functions of the system" rel="internal"><li>Functions of the system</li></a>
-		<a class="nav-link" href="#Architectural design" rel="internal"><li>Architectural design</li></a>
+		<a class="nav-link" href="#Functions_of_the_system" rel="internal"><li>Functions of the system</li></a>
+		<a class="nav-link" href="#Architectural_design" rel="internal"><li>Architectural design</li></a>
 		<a class="nav-link" href="#Decomposition" rel="internal"><li>Decomposition</li></a>
-		<a class="nav-link" href="#Design Rationale" rel="internal"><li>Design Rationale</li></a>
-		<a class="nav-link" href="#Data design" rel="internal"><li>Data design</li></a>
-		<a class="nav-link" href="#Component design " rel="internal"><li>Component design </li></a>
-		<a class="nav-link" href="#Human interface design " rel="internal"><li>Human interface design </li></a>
-		<a class="nav-link" href="#Types of system requirements" rel="internal"><li>Types of system requirements</li></a>
+		<a class="nav-link" href="#Design_Rationale" rel="internal"><li>Design Rationale</li></a>
+		<a class="nav-link" href="#Data_description" rel="internal"><li>Data description</li></a>
+		<a class="nav-link" href="#Component_design " rel="internal"><li>Component design </li></a>
+		<a class="nav-link" href="#Human_interface_design " rel="internal"><li>Human interface design </li></a>
+		<a class="nav-link" href="#Types_of_system_requirements" rel="internal"><li>Types of system requirements</li></a>
 		<a class="nav-link" href="#References" rel="internal"><li>References</li></a>
 
 		
@@ -25,7 +25,7 @@
 
 <main id="main-doc">
 
-<section class="main-section" id="introduction">
+<section class="main-section" id="Introduction">
 <header>Introduction</header>
 <article>
 
@@ -68,7 +68,7 @@ The activities that a user can perform while using this system include:
 </article>
 </section>
 
-<section class="main-section" id="Functions of the system">
+<section class="main-section" id="Functions_of_the_system">
 <header>Functions of the system</header>
 <article>
 <p>These are the functions of the system;</p>
@@ -82,7 +82,7 @@ The activities that a user can perform while using this system include:
 as well as the parking operators stationed at the parking areas can use this application.</p> 
 </article></section>
 
-<section class="main-section" id="Architectural design">
+<section class="main-section" id="Architectural_design">
 <header>Architectural Design</header>
 <article>
 <p>The system follows a client-server architectural style that is divided into three parts, namely; 
@@ -105,28 +105,331 @@ and driver at exit point from the ones that were at car entry, keep watch of tho
 <img src="C:\Users\beryj\OneDrive\Desktop\architecture.png" />
 </article></section>
 
-<section class="main-section" id="Design Rationale">
+<section class="Decomposition" id="Decomposition">
+<header>Decomposition</header>
+<article>
+<p>The decomposition section illustrates the interactions between the users and the system. We shall look at the use case diagram to illustrate the interactions.</p>
+<p>Below is the use case diagram</p>
+<img src=" C:\Users\beryj\OneDrive\Desktop\use.png" />
+<p>From the use case diagram, below are some of the use case descriptions to provide more details on how the interactions willl take place.</p>
+Use case description for registering
+<table border="1" cellspacing="0"cellpading="0">
+<tr>
+	<td>Use case ID</td>
+	<td>1</td></tr>
+<tr>
+	
+	<td>Use case name</td>
+	<td>Register</td></tr>
+
+<tr>
+<td>Actor</td>
+<td>Driver</td>
+</tr>
+
+<tr>
+<td>Description</td>
+<td>Create an account in the system</td>
+</tr>
+
+<tr>
+<td>Pre-conditions</td>
+<td>The driver does not have an account already with the system</td>
+</tr>
+
+<tr><td>Post-conditions</td>
+<td>User has an account and can use the system as and when he/she requires. </td>
+</tr>
+<tr><td>Step by step description </td>
+<td><li>User opens application on mobile device </li>
+<li>User opens main page </li>
+<li>User selects register option </li>
+<li>Fills in the registration form </li>
+<li>Submits registration form </li></td>
+</tr>
+</table>
+<br />
+
+Use case description for login
+<table border="1" cellspacing="0"cellpading="0">
+<tr><td>USE CASE ID</td>
+<td>2</td>
+</tr>
+<tr><td>Use case name</td>
+<td>Login</td>
+</tr>
+
+<tr><td>Actor</td>
+<td>Driver/Administrator/Parking Operator</td>
+</tr>
+<tr><td>Description</td>
+<td>Log into an existing account </td>
+</tr>
+
+<tr><td>Pre-conditions</td>
+<td>The user wants to use the system  has not logged into account </td>
+</tr>
+<tr><td>Post-conditions</td>
+<td>The user is able to use the system. </td>
+</tr>
+<tr><td>Step by step description</td>
+<td><li>The user opens application on mobile device </li><li>Opens log in page </li><li>Fills in the correct credentials</li><li>Selects the log in option </li></td>
+</tr>
+</table>
+</article></section>
+
+<section class="main-section" id="Design_Rationale">
 <header>Design Rationale</header>
 <article>
 <p>The system is based on the Three Tier client/server architectural style that depicts the 
 client as the mobile application and server stub as the Parking Management server. </p>
 <p>Reasons for choosing a three tier Client/Server architecture
- 
 <li>Heterogeneity: The 3-tier model can work best in a heterogeneous database environment where all the database servers and the interactions with 
 these servers are of different types because the middleware server can be used for provision of data access connections to heterogeneous data 
 sources as a database gateway.</li> 
-
 <li>High performance: The middleware server provides high speed native access to multiple databases, so performance is improved over database connectivity 
 solutions like Open Database Connectivity. That means one is not embedding SQL (Structured Query Language) programs into client applications and not locking one´s products to specific database vendors. </li>
-
-
 <li>Easily change and maintain each domain without affecting others when the interface, application logic and data service are separated.</li>
-
 <li>Implementing a 3-tier application using a database gateway as a middleware server can cause the application logic and business rules achieve database 
 independence. This means that you can use different data sources without modification of the application logic and business rules.</li></p> 
 <p>Tradeoffs :
  It increases complexity in building the middleware instead of focusing on the client and server only. </p>
+</article></section>
 
+<section class="Data description" id="Data_description">
+<header>Data description</header>
+<article>
+<p>Data mainly from the fingerprint scanner and camera is listed as follows;
+<ol><li>Thumbprint details: these details will be matched with those details from the national id registration database and altogether merged into the system database. The details will include name, date of birth and place of birth.</li>
+<li>Number plate image: the image will be captured by the camera and therefore numbers from that image will be encrypted and stored into the database.</li></ol>
+
+<p>This table shows the data description for the driver table.
+<table border="1" cellspacing="0"cellpading="0">
+<tr><td>driverId </td>
+<td>INT () </td>
+<td>Primary key </td></tr>
+
+<tr><td>driverName </td>
+<td>VARCHAR() </td>
+<td>Not Null </td></tr>
+
+<tr><td>vehicleNo </td>
+<td>STRING() </td>
+<td>Not Null </td></tr>
+
+<tr><td>password </td>
+<td>STRING() </td>
+<td>Not Null </td></tr>
+</table></p>
+<p>This table shows the data description for the parking operator table.
+<table border="1" cellspacing="0"cellpading="0">
+<tr><td>operatorId </td>
+<td>VARCHAR() </td>
+<td>Primary key </td></tr>
+
+<tr><td>operatorName </td>
+<td>VARCHAR() </td>
+<td>Not Null </td></tr>
+</table></p>
+</p>
+
+<p>Below is the Entity Relationship diagram for the system.
+<img src="C:\Users\beryj\OneDrive\Desktop\entity.png" /></p>
+</article></section>
+
+<section class="Component design" id="Component_design">
+<header>Component design</header>
+<article>
+<p>The component design shows the different classes that are used in the system.</p>
+<table border="1" cellspacing="0"cellpading="0">
+<tr>
+<td>Class</td>
+<td>Method</td>
+<td>Pseudo code</td></tr>
+
+<tr>
+<td>Authentication</td>
+<td>Register()</td>
+<td><li>Insert them into database</li>
+<li>IF Error</li>
+<li>PRINT Unsuccessful</li>
+<li>ELSE</li>
+<li>PRINT Added successful</li></td></tr>
+
+<tr>
+<td></td>
+<td>Login()</td>
+<td><li>Enter username AND password</li>
+<li>Check user details in database</li>
+<li>IF user exists</li>
+<li>Grant Access</li>
+<li>ELSE</li><li>Deny Access</li></td></tr>
+
+<tr>
+<td>Access parking</td>
+<td>Available_parking()</td>
+<td><li>Select parking area of choice</li>
+<li>Onclick view parking details</li>
+<li>Select parking area of choice</li>
+<li>Such as available free spaces</li>
+</td></tr>
+</table>
+<p> From the table above, some of the codes will be appear as seen below;</p>
+<p>During registration, the sytax will be as seen;
+<code>
+ if(condition){
+ statement;
+ }
+ </code></p>
+<p>where condition is being in the database and statement is print already added.</p>
+<p>In cases where there are two options forexample, we use if and else;
+<code>
+if(condition){
+statement1;}
+else {
+statement2;}
+</code>
+</article></section>
+
+<section class="Human interface design" id="Human_interface_design">
+<header>Human interface design</header>
+<article>
+<p>Overview of User Interface:</p> 
+<p>The user will first register with the system online so that he or she becomes a member. The user interface will be changed from guest to member and it will be confirmed on the screen displayed as “logged in as a member”.
+This registration is required to get the users details such as phone number since the national id system didn’t capture the number. 
+The system will also be able to scan the driver’s finger print and record the details. 
+On scanning, the user will have to insert his or her thumbprint on the scanner which will have to change color as a feedback 
+that the thumbprint is recorded or not.</p>
+
+<p>Screen Objects and Actions 
+<li>Data on the scanner is displayed in two colors; red showing that the finger print is false and blue showing that the thumbprint is true.</li>
+<li>For the web view, the url bar is where the user inserts the link.</li></p>
+
+<p>User interface</p>
+<p>The user interface during scanning of the finger print.</p>
+<img src="C:\Users\beryj\OneDrive\Desktop\fig2.jpg"/>
+<p>The user interface when that the fingerprint is false.</p>
+<img src="C:\Users\beryj\OneDrive\Desktop\fig1.png"/>
+
+
+</article></section>
+
+<section class="Types of system requirements" id="Types_of_system_requirements">
+<header>Types of system requirements</header>
+<article>
+<p>The requirements were divided into functional requirements and non-functional requirements.</p>
+<ol><li>Functional requirements</li>
+<ul><li>FREQ-1: The system shall be able to carry out registration of the drivers who want to use the application.</li>
+<li>FREQ-2: The system shall be able to monitor the available Parking..</li>
+<li>FREQ-3: The system shall be able to display Parking space to the drivers..</li>
+<li>FREQ-4: The system shall be able to match the driver to the car..</li>
+<li>FREQ-5: The system shall be able to capture the biometric information of the car driver and the car number plate.</li></ul>
+<li>Non-functional requirements</li>
+<ul><li>NREQ-1: The system shall be operative 24hrs every day of the week..</li>
+<li>NREQ-2: The system should be able to run on all operating systems..</li>
+<li>NREQ-3: The system shall only be accessed over the internet..</li>
+<li>NREQ-4: The driver shall receive a notification only when the mismatch of thumbprints has occurred three times..</li></ul></ol>
+
+<p>This table shows the Requirements matrix for the above functional and no functional requirements.</p>
+<table border="1" cellspacing="0"cellpading="0">
+
+<tr>
+<td>Requirement ID</td>
+<td>Requirements</td>
+<td>System modules</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Authentication</td>
+<td>Tallying</td>
+<td>Matching</td>
+</tr>
+
+<tr>
+<td>FREQ-1</td>
+<td>The system shall be able to carry out registration of the drivers who want to use the application.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>FREQ-2</td>
+<td>The system shall be able to monitor the available Parking.</td>
+<td></td>
+<td></td>
+<td></td>
+
+</tr>
+
+<tr>
+<td>FREQ-3</td>
+<td>The system shall be able to display Parking space to the drivers.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>FREQ-4</td>
+<td>The system shall be able to match the driver to the car.
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>FREQ-5</td>
+<td>The system shall be able to capture the biometric information of the car driver and the car number plate.
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>NREQ-1</td>
+<td>The system shall be operative 24hrs every day of the week. </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>NREQ-2</td>
+<td>The system should be able to run on all operating systems.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>NREQ-3</td>
+<td>The system shall only be accessed over the internet.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>NREQ-4</td>
+<td>	
+The driver shall receive a notification only when the mismatch of thumbprints has occurred three times.
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</article></section>
+
+<section class="main-section" id="References">
+<header>References</header>
+<article>
+<p>The document which was used as sources of information is the <a href="https://zenodo.org/record/1287662#.Wx-W_SBRXIU">The paper of findings</a> from the survey that was carried out during data collection in the development of the system.</p>
 
 
 </article></section>
